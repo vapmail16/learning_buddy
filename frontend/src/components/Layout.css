@@ -1,0 +1,76 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.layout-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: #1a1a2e;
+  color: #eee;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.layout-brand {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #eee;
+  text-decoration: none;
+}
+
+.layout-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.layout-nav a {
+  color: #aaa;
+  text-decoration: none;
+}
+
+.layout-nav a:hover {
+  color: #fff;
+}
+
+.layout-user {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.layout-logout {
+  background: transparent;
+  border: 1px solid #555;
+  color: #ccc;
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.layout-logout:hover {
+  background: #333;
+  color: #fff;
+}
+
+.layout-main {
+  flex: 1;
+  padding: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .layout-header {
+    padding: 0.5rem 0.75rem;
+  }
+  .layout-main {
+    padding: 0.75rem;
+  }
+}

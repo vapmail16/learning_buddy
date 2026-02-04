@@ -1,0 +1,30 @@
+need to follow frontend backend middleware arch - all frontend related files should be in frontend folder and backend related files shkould be in backend folder 
+
+need to use postgrssql database 
+
+follow TDD approach from get go - all code must follow a tdd approach 
+
+jwt login / auth 
+
+functional requirments 
+
+I want to create a learning buddy 
+i am attending astrology classes, in which the teacher teaches and i take notes, i want to create a system
+where i can upload an image (with my notes) and the system is able to scan and extract text /tables/highlighted points from the photo
+and then present it into a nice format 
+
+so from the top i should be able to add a course, i should be able to add more than 1 course 
+for each course i should be able to create like sessions (so the idea is that i will log all the notes by session/classes)
+then in a particular session i should be able to upload multiple images and it should be able to scan them and then create nice notes for me. if there is a table it should create a table and add all values correctly. 
+
+it should show the content in editable format and once i save then it should be able to save. i should be able to edit the cntent anytime i want 
+
+do we need LLM for this or can we do with python Libraries 
+
+the toold should work on mobile i am thinking to use react/nodejs/python (if required?)
+
+We can store these images in public/
+
+We start with database and then backend and then frontend 
+
+please come up with an approach note - only 1 document which should have entire project understanding, plan, checklist phase wise 

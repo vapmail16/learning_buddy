@@ -1,0 +1,21 @@
+{
+  "name": "learning-buddy",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Learning Buddy — courses, sessions, notes, extraction",
+  "scripts": {
+    "db:create": "cd backend && npm run db:create",
+    "db:drop": "cd backend && npm run db:drop",
+    "db:reset": "cd backend && npm run db:reset",
+    "db:seed": "cd backend && npm run db:seed",
+    "migrate:up": "cd backend && npm run migrate:up",
+    "migrate:down": "cd backend && npm run migrate:down",
+    "start": "cd backend && npm start",
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd frontend && npm run dev",
+    "dev": "cd frontend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "test": "cd backend && npm test",
+    "test:frontend": "cd frontend && npm run test:run"
+  }
+}

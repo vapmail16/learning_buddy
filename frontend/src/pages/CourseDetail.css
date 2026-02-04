@@ -1,0 +1,84 @@
+.course-detail h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+}
+
+.course-detail h2 {
+  margin: 1.5rem 0 0.75rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.breadcrumb {
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.breadcrumb a {
+  color: #1a1a2e;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.session-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.session-form input {
+  flex: 1;
+  min-width: 180px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.session-form button {
+  padding: 0.5rem 1rem;
+  background: #1a1a2e;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.session-form button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.session-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.session-list li {
+  margin-bottom: 0.5rem;
+}
+
+.session-list a {
+  display: block;
+  padding: 0.6rem 0.75rem;
+  background: #f5f5f5;
+  border-radius: 4px;
+  color: #1a1a2e;
+  text-decoration: none;
+}
+
+.session-list a:hover {
+  background: #eee;
+}
+
+.session-list .empty {
+  color: #666;
+  padding: 1rem 0;
+}
