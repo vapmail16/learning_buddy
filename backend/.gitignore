@@ -3,4 +3,6 @@ node_modules/
 coverage/
 *.log
 .DS_Store
-public/uploads/
+# Ignore uploaded files but keep the folder (tracked via .gitkeep)
+public/uploads/*
+!public/uploads/.gitkeep
