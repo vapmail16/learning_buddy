@@ -1,0 +1,3 @@
+# Copy your local backend/public/uploads/* image files here, then commit.
+# The Dockerfile copies this folder into public/uploads at build time so
+# deployed backend can serve them. Filenames must match DB file_path basenames.

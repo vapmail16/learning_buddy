@@ -15,7 +15,8 @@
     "db:reset": "node scripts/reset-db.js",
     "db:seed": "node -r dotenv/config scripts/seed.js",
     "migrate:remote": "node scripts/migrate-to-remote-db.js",
-    "migrate:data": "node scripts/migrate-data-to-remote.js"
+    "migrate:data": "node scripts/migrate-data-to-remote.js",
+    "migrate:fix-sequences": "node scripts/fix-sequences-after-migrate.js"
   },
   "engines": {
     "node": ">=18"

@@ -19,6 +19,8 @@ COPY . .
 
 # Create uploads directory (multer stores files in public/uploads)
 RUN mkdir -p public/uploads
+# Include any seed files (copy local public/uploads/* into public/uploads-seed/ and commit)
+COPY public/uploads-seed/ public/uploads/
 
 # Expose port (default 3000; dcdeploy may use PORT env)
 EXPOSE 3000
