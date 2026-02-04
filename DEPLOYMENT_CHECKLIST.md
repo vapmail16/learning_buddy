@@ -37,18 +37,24 @@
 
 ## Phase 3: Git push (after DB + backend are done)
 
-- [ ] **3.1** Do **not** commit `backend/.env` (sensitive; use DCDeploy env vars).
-- [ ] **3.2** Push when ready:
+- [ ] **3.1** Do **not** commit `backend/.env` or `frontend/.env` (sensitive; use DCDeploy env vars / build args).
+- [ ] **3.2** Push when ready (includes frontend Dockerfile, nginx.conf, README, CORS, docs):
   ```bash
   git remote add origin https://github.com/vapmail16/learning_buddy.git
   git add .
-  git commit -m "Prepare for dcdeploy: migrations, Dockerfile, docs"
+  git commit -m "Frontend DCDeploy prep: Dockerfile, nginx, CORS, README, deployment docs"
   git push -u origin main
   ```
 
 ---
 
-## Phase 4: Frontend (later)
+## Phase 4: Frontend on DCDeploy
 
-- [ ] Create frontend service on DCDeploy; set build env `VITE_API_URL=<backend-url>`.
-- [ ] After frontend is live: set backend env `FRONTEND_URL` and `ALLOWED_ORIGINS`, then redeploy backend.
+- [ ] **4.1** Create frontend service in DCDeploy (Context: `./frontend`, Dockerfile: `./frontend/Dockerfile`, Port: `80`).
+- [ ] **4.2** Set **build argument** in DCDeploy: `VITE_API_URL=https://backend-lye88yzj2e.dcdeploy.cloud` (or your backend URL).
+- [ ] **4.3** Deploy frontend; note frontend URL (e.g. `https://frontend-xxxxx.dcdeploy.cloud`).
+- [ ] **4.4** In **backend** service → Environment variables: set `FRONTEND_URL` and `ALLOWED_ORIGINS` to the frontend URL.
+- [ ] **4.5** Redeploy backend so CORS allows the frontend origin.
+- [ ] **4.6** Verify: open frontend URL, register/login, use app; no CORS errors in console.
+
+See **docs/FRONTEND_DEPLOYMENT_GUIDE.md** for step-by-step and troubleshooting.
