@@ -1,6 +1,7 @@
 # Frontend Deployment Guide – Learning Buddy (DCDeploy)
 
-**Reference**: mahimapareek frontend deployment.  
+**Full deployment guide**: **docs/DEPLOYMENT_FULL_GUIDE.md** (database, backend, frontend, CORS, learnings). This doc is a frontend-focused summary.
+
 **Repo**: https://github.com/vapmail16/learning_buddy  
 **Backend URL**: https://backend-lye88yzj2e.dcdeploy.cloud
 

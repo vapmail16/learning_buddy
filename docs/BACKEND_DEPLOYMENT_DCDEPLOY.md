@@ -1,6 +1,7 @@
 # Learning Buddy – Backend Deployment to DCDeploy
 
-**Reference**: [mahimapareek](https://github.com/vapmail16/learning_buddy) deployment pattern (same repo family).  
+**Full deployment guide**: **docs/DEPLOYMENT_FULL_GUIDE.md** (database, backend, frontend, CORS, learnings). This doc is a backend-focused summary.
+
 **Repo**: https://github.com/vapmail16/learning_buddy
 
 ---

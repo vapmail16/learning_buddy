@@ -72,7 +72,8 @@ async function upload(req, res) {
     }
     return res.status(201).json({ ...record, notesUpdated });
   } catch (err) {
-    return res.status(500).json({ error: 'Upload failed' });
+    const message = err.code === '23505' ? 'Duplicate key (run fix-sequences-after-migrate.js on the DB).' : (err.message || 'Upload failed');
+    return res.status(err.code === '23505' ? 409 : 500).json({ error: message });
   }
 }
 

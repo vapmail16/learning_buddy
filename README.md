@@ -97,7 +97,7 @@ See `docs/api.md` and `docs/extraction-api.md` for details.
 
 ## Deployment (DCDeploy)
 
-Deployment follows the same pattern as the [mahimapareek](https://github.com/vapmail16/mahimapareek) project.
+**Full guide**: **[docs/DEPLOYMENT_FULL_GUIDE.md](docs/DEPLOYMENT_FULL_GUIDE.md)** – database, backend, frontend, CORS, learnings, and troubleshooting in one document. Use it for future deployments.
 
 ### Order of operations
 

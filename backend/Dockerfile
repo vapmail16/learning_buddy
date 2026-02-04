@@ -17,10 +17,15 @@ RUN npm ci --omit=dev 2>/dev/null || npm install --omit=dev
 # Copy application
 COPY . .
 
-# Create uploads directory (multer stores files in public/uploads)
+# Keep seed in a separate path so entrypoint can merge without overwriting runtime uploads
+COPY public/uploads-seed/ /app/uploads-seed/
+
+# Create uploads directory (multer + entrypoint merge seed here; volume can be mounted here)
 RUN mkdir -p public/uploads
-# Include any seed files (copy local public/uploads/* into public/uploads-seed/ and commit)
-COPY public/uploads-seed/ public/uploads/
+
+# Entrypoint: merge seed into public/uploads only if files don't exist (preserves uploads from deployed app)
+COPY scripts/entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
 # Expose port (default 3000; dcdeploy may use PORT env)
 EXPOSE 3000
@@ -29,5 +34,5 @@ EXPOSE 3000
 HEALTHCHECK --interval=30s --timeout=3s --start-period=10s --retries=3 \
   CMD curl -f http://localhost:${PORT:-3000}/api/health || exit 1
 
-# Start app only. Run migrations once against external DB: ./migrate-to-remote-db.sh
+ENTRYPOINT ["/entrypoint.sh"]
 CMD ["node", "-r", "dotenv/config", "src/index.js"]

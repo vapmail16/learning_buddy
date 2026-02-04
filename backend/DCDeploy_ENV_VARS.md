@@ -1,6 +1,7 @@
 # DCDeploy Environment Variables - Learning Buddy Backend
 
-**Status**: Ready for DCDeploy  
+**Full deployment guide**: **docs/DEPLOYMENT_FULL_GUIDE.md** (all steps and env vars in one place).
+
 **Repo**: https://github.com/vapmail16/learning_buddy
 
 ---

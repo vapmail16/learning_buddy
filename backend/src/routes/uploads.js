@@ -16,11 +16,22 @@ const storage = multer.diskStorage({
     cb(null, safe);
   },
 });
-const upload = multer({ storage });
+const upload = multer({
+  storage,
+  limits: { fileSize: 15 * 1024 * 1024 }, // 15MB
+});
 
 router.use(authMiddleware);
 
 router.get('/:uploadId/file', uploadsController.serveFile);
-router.post('/sessions/:sessionId', upload.single('file'), uploadsController.upload);
+router.post('/sessions/:sessionId', (req, res, next) => {
+  upload.single('file')(req, res, (err) => {
+    if (err) {
+      if (err.code === 'LIMIT_FILE_SIZE') return res.status(413).json({ error: 'File too large (max 15MB)' });
+      return res.status(500).json({ error: err.message || 'Upload failed' });
+    }
+    next();
+  });
+}, uploadsController.upload);
 
 module.exports = router;

@@ -1,6 +1,7 @@
 # Learning Buddy – Deployment Checklist (DCDeploy)
 
-**Reference**: mahimapareek deployment (same approach).  
+**Full guide**: See **docs/DEPLOYMENT_FULL_GUIDE.md** for all steps, learnings, and troubleshooting (database, backend, frontend). This checklist is a short phase list.
+
 **Repo**: https://github.com/vapmail16/learning_buddy
 
 ---
