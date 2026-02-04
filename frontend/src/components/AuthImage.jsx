@@ -1,9 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
-import { getToken } from '../api/client';
+import { BASE, getToken } from '../api/client';
 
-const BASE = import.meta.env.DEV
-  ? `${window.location.origin}/api`
-  : (import.meta.env.VITE_API_URL || 'http://localhost:3000');
+/** URL path for serving an upload file (same as backend route). */
+const UPLOAD_FILE_PATH = '/api/uploads';
 
 /**
  * Renders an image from a protected upload URL (uses Bearer token).
@@ -16,7 +15,7 @@ export function AuthImage({ uploadId, alt = '', className }) {
   useEffect(() => {
     let cancelled = false;
     const token = getToken();
-    fetch(`${BASE}/uploads/${uploadId}/file`, {
+    fetch(`${BASE}${UPLOAD_FILE_PATH}/${uploadId}/file`, {
       headers: token ? { Authorization: `Bearer ${token}` } : {},
     })
       .then((res) => {

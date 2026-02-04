@@ -1,5 +1,5 @@
 // In dev, use same-origin /api so Vite proxies to backend (you get 502 if backend is down instead of 404).
-const BASE = import.meta.env.DEV
+export const BASE = import.meta.env.DEV
   ? `${window.location.origin}/api`
   : (import.meta.env.VITE_API_URL || 'http://localhost:3000');
 

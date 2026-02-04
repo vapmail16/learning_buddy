@@ -62,7 +62,7 @@ export function SessionDetail() {
     setUploadStatus({ type: 'uploading', message: `Uploading ${file.name}… Extracting text into notes…` });
     setUploading(true);
     try {
-      const upload = await apiUpload(`/uploads/sessions/${sessionId}`, file);
+      const upload = await apiUpload(`/api/uploads/sessions/${sessionId}`, file);
       setNotesData((prev) => ({
         ...prev,
         uploads: [...(prev.uploads || []), upload],
