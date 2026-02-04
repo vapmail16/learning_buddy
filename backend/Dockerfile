@@ -1,5 +1,5 @@
 # Learning Buddy Backend - DCDeploy
-# Node 18, run migrations on start, then start API
+# Node 18. Migrations are run once via ./migrate-to-remote-db.sh (not on container start).
 
 FROM node:18-alpine
 
@@ -27,5 +27,5 @@ EXPOSE 3000
 HEALTHCHECK --interval=30s --timeout=3s --start-period=10s --retries=3 \
   CMD curl -f http://localhost:${PORT:-3000}/api/health || exit 1
 
-# Run migrations then start (migrations use DATABASE_URL from env at runtime)
-CMD ["sh", "-c", "node -r dotenv/config node_modules/.bin/node-pg-migrate up && node -r dotenv/config src/index.js"]
+# Start app only. Run migrations once against external DB: ./migrate-to-remote-db.sh
+CMD ["node", "-r", "dotenv/config", "src/index.js"]

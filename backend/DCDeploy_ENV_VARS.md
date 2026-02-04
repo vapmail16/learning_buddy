@@ -41,7 +41,7 @@ OPENAI_API_KEY=sk-your-openai-key
 
 1. **DATABASE_URL**: Run `./migrate-to-remote-db.sh` from project root first so schema exists on the external DB. Password can contain `{` `}` `]` etc.; no encoding needed.
 2. **FRONTEND_URL / ALLOWED_ORIGINS**: Set after you deploy the frontend; then redeploy backend so CORS allows the frontend origin.
-3. **Migrations**: The Dockerfile runs `node-pg-migrate up` on container start, so migrations run automatically when the service starts (using `DATABASE_URL` from env).
+3. **Migrations**: Run once from your machine (not in the container): `./migrate-to-remote-db.sh` from the repo root. The container only starts the API; it does not run migrations (avoids "relation already exists" when the DB was already migrated).
 
 ---
 
